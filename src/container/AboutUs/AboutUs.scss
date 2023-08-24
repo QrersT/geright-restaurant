@@ -1,0 +1,103 @@
+.aboutUs {
+  padding: 272px 0;
+  @include adaptiv-value("padding-top", 272, 50, 1);
+  @include adaptiv-value("padding-bottom", 272, 50, 1);
+  background: url(../../assets/bg.png) center center / cover no-repeat;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptiv-value("gap", 250, 0, 1);
+    gap: 250px;
+  }
+  &__block {
+    z-index: 2;
+    max-width: 523px;
+    &:nth-child(1) {
+      text-align: right;
+    }
+    &:nth-child(2) {
+      text-align: left;
+
+      /*  .aboutUs__title::before {
+        right: 100%;
+        transform: rotate(-90deg);
+        transform: translate(-300px);
+      } */
+    }
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 40px;
+      height: 10px;
+      bottom: -8px;
+      transform: rotate(-180deg);
+      right: 0;
+      background: url("../../assets//spoon.png") center center / cover no-repeat;
+    }
+
+    &_right {
+      &::before {
+        left: 0;
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  &__text {
+    color: $color-grey;
+    margin: 32px 0;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 175%;
+    letter-spacing: 0.64px;
+  }
+
+  &__image-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  &__img {
+    &_g {
+      max-width: 391px;
+      @include adaptiv-value("max-width", 391, 180, 1);
+    }
+    &_knife {
+      position: absolute;
+      left: 50%;
+      top: -50%;
+      transform: translate(-50%, 10%);
+      @include adaptiv-value("max-width", 84, 40, 1);
+      max-width: 84px;
+    }
+  }
+}
+
+@media (max-width: ($md1 + px)) {
+  .aboutUs {
+    &__container {
+      flex-direction: column;
+      /* align-items: center; */
+      /*    justify-content: center; */
+      gap: 0;
+    }
+    &__image-wrapper {
+      position: sticky;
+    }
+    &__img {
+      &_g {
+      }
+      &_knife {
+        transform: rotate(-90deg) translateX(-30px);
+      }
+    }
+  }
+}

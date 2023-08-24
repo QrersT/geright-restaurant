@@ -1,0 +1,111 @@
+.header {
+  padding: 50px 0 0 0;
+  @include adaptiv-value("padding-bottom", 244, 120, 1);
+  background-color: $color-black;
+  &__container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    position: relative;
+    flex-wrap: wrap;
+  }
+  &__content {
+    max-width: 455px;
+    width: 100%;
+    @include adaptiv-value("margin-top", 125px, 40px, 1);
+    @include adaptiv-value("margin-bottom", 125px, 40px, 1);
+  }
+  &__slider {
+    background-color: #fff;
+    /*  width: 100%; */
+  }
+}
+.content-header {
+  &__title {
+    @include adaptiv-value("font-size", 90, 60, 1);
+  }
+  &__text {
+    font-family: $font-alt;
+    color: $color-grey;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 175%;
+    letter-spacing: 0.64px;
+    margin: 32px 0;
+  }
+  &__btn {
+    background-color: $color-golden;
+    padding: 8px 32px;
+    color: #000;
+    font-size: 16px;
+    font-family: $font-base;
+    font-weight: 700;
+    line-height: 175%;
+    letter-spacing: 0.64px;
+    border: none;
+  }
+}
+
+.swiper {
+  max-width: 620px;
+  height: 100%;
+  max-height: 690px;
+  position: static !important;
+}
+
+.header__slider {
+  background-color: #000;
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .swiper-pagination {
+    max-width: 500px;
+    bottom: -64px !important;
+    transform: translate(-50%, 100%);
+    left: 50% !important;
+    z-index: 5;
+  }
+
+  .swiper-pagination-bullet {
+    color: #fff;
+    opacity: 0.7;
+    font-family: $font-base;
+    width: 40px;
+    height: 45px;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 175%;
+    letter-spacing: 0.64px;
+    text-transform: capitalize;
+    background: transparent;
+    /*  width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    color: #fff;
+    opacity: 1;
+     */
+  }
+
+  .swiper-pagination-bullet-active {
+    color: #f5efdb;
+    border-bottom: 1px solid $color-golden;
+    background-color: transparent;
+    border-radius: 0;
+    opacity: 1;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: ($md3 + px)) {
+  .header__slider {
+    width: 100%;
+  }
+}

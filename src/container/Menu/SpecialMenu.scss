@@ -1,0 +1,97 @@
+.specialMenu {
+  @include adaptiv-value("padding-top", 128, 50, 1);
+  @include adaptiv-value("padding-bottom", 128, 50, 1);
+  background: $color-black;
+  &__subheading {
+    text-align: center;
+  }
+  &__heading {
+    margin-bottom: 64px;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__wines,
+  &__cocktails {
+    max-width: 412px;
+  }
+
+  &__img {
+    width: 100%;
+    @include adaptiv-value("max-width", 444, 300, 1);
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    text-align: center;
+    font-family: $font-base;
+    font-size: 45px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 1.8px;
+    text-transform: capitalize;
+    margin-bottom: 40px;
+  }
+  &__drink-title {
+    color: $color-golden;
+    font-family: $font-base;
+
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: 0.92px;
+    text-transform: capitalize;
+    flex: 1 1 auto;
+  }
+  &__line {
+    @include adaptiv-value("width", 120, 60, 1);
+    background: #fff;
+    height: 1px;
+    @include adaptiv-value("margin-right", 32px, 15px, 1);
+    @include adaptiv-value("margin-left", 32px, 15px, 1);
+    margin: 0 32px;
+  }
+
+  &__price {
+    font-family: $font-base;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: 0.92px;
+    text-transform: capitalize;
+  }
+  &__tags {
+    width: 100%;
+    margin-top: 8px;
+    color: $color-grey;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 175%;
+    letter-spacing: 0.64px;
+    &:not(:first-child) {
+      margin-bottom: 41px;
+    }
+  }
+}
+
+@media (max-width: ($md1 + px)) {
+  .specialMenu {
+    &__menu {
+      flex-direction: column;
+    }
+    &__img {
+      margin-bottom: 50px;
+    }
+  }
+}

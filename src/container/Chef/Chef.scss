@@ -1,0 +1,72 @@
+.chef {
+  @include adaptiv-value("padding-top", 128, 50, 1);
+  @include adaptiv-value("padding-bottom", 128, 50, 1);
+  background: url(../../assets/bg.png) center center / cover no-repeat;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 96px;
+    @include adaptiv-value("gap", 96, 40, 1);
+    justify-content: center;
+  }
+
+  &__img {
+    max-width: 665px;
+    width: 100%;
+  }
+
+  &__content {
+    max-width: 570px;
+  }
+
+  &__heading {
+  }
+
+  &__text-wrapper {
+    /* display: block; */
+  }
+
+  &__quote {
+    max-width: 44px;
+    width: 100%;
+    margin-right: 10px;
+  }
+
+  &__text {
+    display: inline-block;
+    margin: 65px 0 65px;
+    color: $color-grey;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 175%;
+    letter-spacing: 0.64px;
+  }
+
+  &__name {
+    color: $color-golden;
+    font-family: $font-base;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 1.28px;
+    text-transform: capitalize;
+  }
+  &__about {
+    color: $color-grey;
+    /* Body 16px Regular */
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 175%; /* 28px */
+    letter-spacing: 0.64px;
+  }
+
+  &__signature {
+    margin-top: 65px;
+    img {
+      width: 100%;
+      max-width: 235px;
+    }
+  }
+}
